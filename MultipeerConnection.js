@@ -66,7 +66,7 @@ export default class MultipeerConnection extends EventEmitter {
     var dataReceived = DeviceEventEmitter.addListener(
       'RCTMultipeerConnectivityDataReceived',
       ((event) => {
-        event.sender = this._peers[event.sender.id];
+        event.sender = this._peers[event.peer.id];
         this.emit('data', event);
       }).bind(this));
   }
